@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <!-- Text markers visualization -->
+  <style>
+    text { font-family: "Times New Roman", serif; font-size: 24px; }
+    .hebrew { font-size: 36px; }
+    .marker { fill: #4444ff; }
+  </style>
+  <text x="50" y="50" class="hebrew">פ</text>
+  <text x="100" y="50" class="marker">- Petuchah</text>
+  <text x="50" y="100" class="hebrew">ס</text>
+  <text x="100" y="100" class="marker">- Setumah</text>
+</svg> 

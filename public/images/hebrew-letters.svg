@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <!-- Basic Hebrew letters visualization -->
+  <style>
+    text { font-family: "Times New Roman", serif; font-size: 24px; }
+    .hebrew { font-size: 36px; }
+  </style>
+  <text x="50" y="50" class="hebrew">א ב ג ד ה ו ז ח ט י כ ל</text>
+  <text x="50" y="100" class="hebrew">מ נ ס ע פ צ ק ר ש ת</text>
+</svg> 

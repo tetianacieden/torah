@@ -1,0 +1,25 @@
+npx create-next-app@latest torahgpt --typescript --tailwind --app
+cd torahgpt
+npm install @heroicons/react @headlessui/react
+npm install -D tailwindcss postcss autoprefixer
+npm install
+
+npm run dev
+
+ls app/components/
+# Should show:
+# Header.tsx
+# LevelCard.tsx
+# ProgressBar.tsx
+# SkillCard.tsx
+
+ls
+# Should show:
+# app/
+# postcss.config.js
+# tailwind.config.js
+# package.json
+
+npx tailwindcss init -p
+
+code --install-extension bradlc.vscode-tailwindcss
