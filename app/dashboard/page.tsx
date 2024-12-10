@@ -50,7 +50,7 @@ export default function StudentDashboard() {
                         className={`
                           group relative flex-1 p-4 rounded-lg border h-24 
                           transition-all duration-300
-                          ${index < level.progress 
+                          ${index < (level.progress ?? 0)
                             ? 'bg-white border-emerald-200 hover:border-emerald-300' 
                             : level.status === 'in-progress' && index === level.progress
                               ? 'bg-white border-blue-200 hover:border-blue-300 shadow-md'
@@ -62,17 +62,17 @@ export default function StudentDashboard() {
                           <span className={`
                             w-6 h-6 rounded-full flex items-center justify-center text-xs font-medium
                             transition-colors
-                            ${index < level.progress 
+                            ${index < (level.progress ?? 0)
                               ? 'bg-emerald-600 text-white group-hover:bg-emerald-700' 
                               : level.status === 'in-progress' && index === level.progress
                                 ? 'bg-blue-600 text-white group-hover:bg-blue-700'
                                 : 'bg-gray-200 text-gray-600'}
                           `}>
-                            {index < level.progress ? '✓' : (index + 1)}
+                            {index < (level.progress ?? 0) ? '✓' : (index + 1)}
                           </span>
                           <span className={`
                             font-medium transition-colors
-                            ${index < level.progress 
+                            ${index < (level.progress ?? 0)
                               ? 'text-emerald-700 group-hover:text-emerald-800' 
                               : level.status === 'in-progress' && index === level.progress
                                 ? 'text-gray-900'
@@ -82,7 +82,7 @@ export default function StudentDashboard() {
                           </span>
                         </div>
 
-                        {index < level.progress && (
+                        {index < (level.progress ?? 0) && (
                           <div className="absolute bottom-2 right-2">
                             <span className="text-xs font-medium text-emerald-800 bg-emerald-50 px-2 py-1 rounded">
                               89/100

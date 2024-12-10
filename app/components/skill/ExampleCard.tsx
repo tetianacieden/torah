@@ -1,3 +1,5 @@
+import { SpeakerWaveIcon } from '@heroicons/react/24/outline';
+
 export function ExampleCard({ example, onPlay }: { 
   example: { text: string; audio?: string }; 
   onPlay?: () => void;

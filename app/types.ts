@@ -1,4 +1,5 @@
 import { SkillId } from '@/data/curriculum/scores';
+import { ReactNode } from 'react';
 
 export interface BaseExercise {
   id: string;
@@ -87,6 +88,8 @@ interface SkillProgress {
 
 // Update Skill interface
 export interface Skill {
+  requiredMastery: number;
+  skillId: string;
   id: SkillId;
   title: string;
   description: string;
@@ -100,13 +103,16 @@ export interface Skill {
 
 // Update Level interface
 export interface Level {
+  hebrewTitle: ReactNode;
+  learningGoals: any;
   id: number;
   title: string;
   description: string;
+  order: number;
   status: 'locked' | 'in-progress' | 'completed';
-  progress: number;
+  progress?: number;
   totalSkills: number;
-  skills: Skill[];  // Change from string[] to Skill[]
+  skills: Skill[];
 }
 
 // ... other types

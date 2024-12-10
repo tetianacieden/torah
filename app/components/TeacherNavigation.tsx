@@ -1,97 +1,68 @@
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import {
-  ChartBarIcon,
-  UsersIcon,
-  AcademicCapIcon,
-  Cog6ToothIcon,
-  QuestionMarkCircleIcon
-} from '@heroicons/react/24/outline';
-import { ViewSwitcher } from './ViewSwitcher';
+"use client";
 
-const menuItems = [
-  {
-    name: 'Dashboard',
-    href: '/teacher',
-    icon: ChartBarIcon
-  },
-  {
-    name: 'My Classes',
-    href: '/teacher/classes',
-    icon: AcademicCapIcon
-  },
-  {
-    name: 'My Students',
-    href: '/teacher/students',
-    icon: UsersIcon
-  },
-  {
-    name: 'Settings',
-    href: '/teacher/settings',
-    icon: Cog6ToothIcon
-  },
-  {
-    name: 'Help',
-    href: '/teacher/help',
-    icon: QuestionMarkCircleIcon
-  }
-];
+import Link from 'next/link';
+import { 
+  HomeIcon, 
+  UsersIcon, 
+  DocumentTextIcon,
+  AcademicCapIcon,
+  ChartBarIcon
+} from '@heroicons/react/24/outline';
 
 export function TeacherNavigation() {
-  const pathname = usePathname();
-
   return (
-    <nav className="fixed inset-y-0 left-0 w-64 bg-white border-r border-gray-200">
-      <div className="flex flex-col h-full">
-        {/* Logo/Header */}
-        <div className="flex items-center h-16 px-6 border-b border-gray-200">
-          <h1 className="text-xl font-semibold text-gray-900">Teacher Portal</h1>
-        </div>
-
-        {/* Navigation Items */}
-        <div className="flex-1 px-4 space-y-1 overflow-y-auto py-4">
-          {menuItems.map((item) => {
-            const isActive = pathname === item.href;
-            return (
-              <Link
-                key={item.name}
-                href={item.href}
-                className={`
-                  flex items-center px-4 py-3 text-sm font-medium rounded-lg
-                  ${isActive 
-                    ? 'bg-blue-50 text-blue-700' 
-                    : 'text-gray-700 hover:bg-gray-50'
-                  }
-                `}
+    <nav className="w-64 bg-white shadow-lg h-screen fixed left-0 top-0 border-r border-gray-200">
+      <div className="p-6 flex flex-col h-full">
+        <div className="flex-1">
+          <h2 className="text-2xl font-bold text-blue-600 mb-8">Teacher Portal</h2>
+          <ul className="space-y-4">
+            <li>
+              <Link 
+                href="/teacher" 
+                className="flex items-center space-x-3 text-blue-600 bg-blue-50 rounded-lg p-3"
               >
-                <item.icon 
-                  className={`
-                    mr-3 h-5 w-5
-                    ${isActive ? 'text-blue-700' : 'text-gray-400'}
-                  `}
-                />
-                {item.name}
+                <HomeIcon className="w-5 h-5" />
+                <span>Dashboard</span>
               </Link>
-            )
-          })}
+            </li>
+            <li>
+              <Link 
+                href="/teacher/classes" 
+                className="flex items-center space-x-3 text-gray-600 hover:bg-gray-50 rounded-lg p-3"
+              >
+                <UsersIcon className="w-5 h-5" />
+                <span>Classes</span>
+              </Link>
+            </li>
+            <li>
+              <Link 
+                href="/teacher/assignments" 
+                className="flex items-center space-x-3 text-gray-600 hover:bg-gray-50 rounded-lg p-3"
+              >
+                <DocumentTextIcon className="w-5 h-5" />
+                <span>Assignments</span>
+              </Link>
+            </li>
+            <li>
+              <Link 
+                href="/teacher/reports" 
+                className="flex items-center space-x-3 text-gray-600 hover:bg-gray-50 rounded-lg p-3"
+              >
+                <ChartBarIcon className="w-5 h-5" />
+                <span>Reports</span>
+              </Link>
+            </li>
+          </ul>
         </div>
 
-        {/* View Switcher */}
-        <div className="p-4 border-t border-gray-200">
-          <ViewSwitcher />
-        </div>
-
-        {/* Teacher Info */}
-        <div className="p-4 border-t border-gray-200">
-          <div className="flex items-center">
-            <div className="h-8 w-8 rounded-full bg-gray-200 flex items-center justify-center">
-              <span className="text-sm font-medium text-gray-600">TC</span>
-            </div>
-            <div className="ml-3">
-              <p className="text-sm font-medium text-gray-900">Teacher Name</p>
-              <p className="text-xs text-gray-500">teacher@example.com</p>
-            </div>
-          </div>
+        <div className="mt-auto pt-6 border-t">
+          <Link 
+            href="/"
+            className="flex items-center space-x-3 text-gray-600 hover:bg-gray-50 rounded-lg p-3"
+          >
+            <AcademicCapIcon className="w-5 h-5" />
+            <span>Switch to Student</span>
+          </Link>
         </div>
       </div>
     </nav>

@@ -4,220 +4,240 @@ import { Skill } from '@/types';
 export const skillsData: Skill[] = [
   // Level 1: Hebrew Foundations (10 skills)
   {
-    id: 'letter-recognition',
-    title: 'Letter Recognition',
-    description: 'Learn to identify and recognize all Hebrew letters',
-    level: '1',
-    order: 1,
-    status: 'completed',
-    score: skillScores['letter-recognition']
+      id: 'letter-recognition',
+      title: 'Letter Recognition',
+      description: 'Learn to identify and recognize all Hebrew letters',
+      level: '1',
+      order: 1,
+      status: 'completed',
+      score: skillScores['letter-recognition'],
+      skillId: 'letter-recognition'
   },
   {
-    id: 'basic-reading',
-    title: 'Basic Reading',
-    description: 'Master fundamental Hebrew reading skills',
-    level: '1',
-    order: 2,
-    status: 'completed',
-    prerequisites: ['letter-recognition'],
-    score: skillScores['basic-reading']
+      id: 'basic-reading',
+      title: 'Basic Reading',
+      description: 'Master fundamental Hebrew reading skills',
+      level: '1',
+      order: 2,
+      status: 'completed',
+      prerequisites: ['letter-recognition'],
+      score: skillScores['basic-reading'],
+      skillId: 'basic-reading'
   },
   {
-    id: 'vowel-marks',
-    title: 'Vowel Marks',
-    description: 'Understand and use the Nikud system',
-    level: '1',
-    order: 3,
-    status: 'completed',
-    prerequisites: ['basic-reading'],
-    score: skillScores['vowel-marks']
+      id: 'vowel-marks',
+      title: 'Vowel Marks',
+      description: 'Understand and use the Nikud system',
+      level: '1',
+      order: 3,
+      status: 'completed',
+      prerequisites: ['basic-reading'],
+      score: skillScores['vowel-marks'],
+      skillId: 'vowel-marks'
   },
   {
-    id: 'letter-writing',
-    title: 'Letter Writing',
-    description: 'Practice writing Hebrew letters with proper form',
-    level: '1',
-    order: 4,
-    status: 'completed',
-    prerequisites: ['letter-recognition'],
-    score: skillScores['letter-writing']
+      id: 'letter-writing',
+      title: 'Letter Writing',
+      description: 'Practice writing Hebrew letters with proper form',
+      level: '1',
+      order: 4,
+      status: 'completed',
+      prerequisites: ['letter-recognition'],
+      score: skillScores['letter-writing'],
+      skillId: undefined
   },
   {
-    id: 'final-letters',
-    title: 'Final Letters',
-    description: 'Learn the special forms of letters at word endings',
-    level: '1',
-    order: 5,
-    status: 'completed',
-    prerequisites: ['letter-writing'],
-    score: skillScores['final-letters']
+      id: 'final-letters',
+      title: 'Final Letters',
+      description: 'Learn the special forms of letters at word endings',
+      level: '1',
+      order: 5,
+      status: 'completed',
+      prerequisites: ['letter-writing'],
+      score: skillScores['final-letters'],
+      skillId: undefined
   },
   {
-    id: 'basic-pronunciation',
-    title: 'Basic Pronunciation',
-    description: 'Develop proper pronunciation of letters and vowels',
-    level: '1',
-    order: 6,
-    status: 'completed',
-    prerequisites: ['vowel-marks'],
-    score: skillScores['basic-pronunciation']
+      id: 'basic-pronunciation',
+      title: 'Basic Pronunciation',
+      description: 'Develop proper pronunciation of letters and vowels',
+      level: '1',
+      order: 6,
+      status: 'completed',
+      prerequisites: ['vowel-marks'],
+      score: skillScores['basic-pronunciation'],
+      skillId: undefined
   },
   {
-    id: 'writing-direction',
-    title: 'Writing Direction',
-    description: 'Master the right-to-left writing system',
-    level: '1',
-    order: 7,
-    status: 'completed',
-    prerequisites: ['letter-writing'],
-    score: skillScores['writing-direction']
+      id: 'writing-direction',
+      title: 'Writing Direction',
+      description: 'Master the right-to-left writing system',
+      level: '1',
+      order: 7,
+      status: 'completed',
+      prerequisites: ['letter-writing'],
+      score: skillScores['writing-direction'],
+      skillId: undefined
   },
   {
-    id: 'letter-combinations',
-    title: 'Letter Combinations',
-    description: 'Learn common letter combinations and rules',
-    level: '1',
-    order: 8,
-    status: 'completed',
-    prerequisites: ['basic-pronunciation'],
-    score: skillScores['letter-combinations']
+      id: 'letter-combinations',
+      title: 'Letter Combinations',
+      description: 'Learn common letter combinations and rules',
+      level: '1',
+      order: 8,
+      status: 'completed',
+      prerequisites: ['basic-pronunciation'],
+      score: skillScores['letter-combinations'],
+      skillId: undefined
   },
   {
-    id: 'basic-vocabulary',
-    title: 'Basic Vocabulary',
-    description: 'Learn your first Hebrew words',
-    level: '1',
-    order: 9,
-    status: 'completed',
-    prerequisites: ['letter-combinations'],
-    score: skillScores['basic-vocabulary']
+      id: 'basic-vocabulary',
+      title: 'Basic Vocabulary',
+      description: 'Learn your first Hebrew words',
+      level: '1',
+      order: 9,
+      status: 'completed',
+      prerequisites: ['letter-combinations'],
+      score: skillScores['basic-vocabulary'],
+      skillId: undefined
   },
   {
-    id: 'reading-practice',
-    title: 'Reading Practice',
-    description: 'Practice reading simple Hebrew texts',
-    level: '1',
-    order: 10,
-    status: 'completed',
-    prerequisites: ['basic-vocabulary'],
-    score: skillScores['reading-practice']
+      id: 'reading-practice',
+      title: 'Reading Practice',
+      description: 'Practice reading simple Hebrew texts',
+      level: '1',
+      order: 10,
+      status: 'completed',
+      prerequisites: ['basic-vocabulary'],
+      score: skillScores['reading-practice'],
+      skillId: undefined
   },
 
   // Level 2: Text Navigation
   {
-    id: 'chapter-structure',
-    title: 'Chapter Structure',
-    description: 'Understand how Torah text is organized into chapters and verses',
-    level: '2',
-    order: 1,
-    status: 'completed',
-    prerequisites: ['vowel-marks'],
-    score: skillScores['chapter-structure'],
-    progress: {
-      learn: { completed: true, progress: 100 },
-      practice: { completed: true, progress: 100 },
-      test: {
-        completed: true,
-        progress: 100,
-        score: skillScores['chapter-structure'],
-        answers: {
-          't1': 'א (Alef)',
-          't2': ['א', 'ו', 'י'],
-          't3': ['ש', 'ל', 'ו', 'ם'],
-          't4': [
-            ['ב', 'b/v'],
-            ['ג', 'g'],
-            ['ד', 'd']
-          ],
-          't5': 'ג'
-        }
-      }
-    }
+      id: 'chapter-structure',
+      title: 'Chapter Structure',
+      description: 'Understand how Torah text is organized into chapters and verses',
+      level: '2',
+      order: 1,
+      status: 'completed',
+      prerequisites: ['vowel-marks'],
+      score: skillScores['chapter-structure'],
+      progress: {
+          learn: { completed: true, progress: 100 },
+          practice: { completed: true, progress: 100 },
+          test: {
+              completed: true,
+              progress: 100,
+              score: skillScores['chapter-structure'],
+              answers: {
+                  't1': 'א (Alef)',
+                  't2': ['א', 'ו', 'י'],
+                  't3': ['ש', 'ל', 'ו', 'ם'],
+                  't4': [
+                      ['ב', 'b/v'],
+                      ['ג', 'g'],
+                      ['ד', 'd']
+                  ],
+                  't5': 'ג'
+              }
+          }
+      },
+      skillId: undefined
   },
   {
-    id: 'verse-navigation',
-    title: 'Verse Navigation',
-    description: 'Learn to locate and reference specific verses efficiently',
-    level: '2',
-    order: 2,
-    status: 'completed',
-    prerequisites: ['chapter-structure'],
-    score: skillScores['verse-navigation']
+      id: 'verse-navigation',
+      title: 'Verse Navigation',
+      description: 'Learn to locate and reference specific verses efficiently',
+      level: '2',
+      order: 2,
+      status: 'completed',
+      prerequisites: ['chapter-structure'],
+      score: skillScores['verse-navigation'],
+      skillId: undefined
   },
   {
-    id: 'parsha-overview',
-    title: 'Parsha Overview',
-    description: 'Grasp the weekly Torah portion structure and organization',
-    level: '2',
-    order: 3,
-    status: 'completed',
-    prerequisites: ['verse-navigation'],
-    score: skillScores['parsha-overview']
+      id: 'parsha-overview',
+      title: 'Parsha Overview',
+      description: 'Grasp the weekly Torah portion structure and organization',
+      level: '2',
+      order: 3,
+      status: 'completed',
+      prerequisites: ['verse-navigation'],
+      score: skillScores['parsha-overview'],
+      skillId: undefined
   },
   {
-    id: 'text-markers',
-    title: 'Text Markers',
-    description: 'Identify and understand various textual markers and divisions',
-    level: '2',
-    order: 4,
-    status: 'available',
-    prerequisites: ['parsha-overview']
+      id: 'text-markers',
+      title: 'Text Markers',
+      description: 'Identify and understand various textual markers and divisions',
+      level: '2',
+      order: 4,
+      status: 'available',
+      prerequisites: ['parsha-overview'],
+      skillId: undefined
   },
   {
-    id: 'section-breaks',
-    title: 'Section Breaks',
-    description: 'Recognize different types of textual breaks and their significance',
-    level: '2',
-    order: 5,
-    status: 'locked',
-    prerequisites: ['text-markers']
+      id: 'section-breaks',
+      title: 'Section Breaks',
+      description: 'Recognize different types of textual breaks and their significance',
+      level: '2',
+      order: 5,
+      status: 'locked',
+      prerequisites: ['text-markers'],
+      skillId: undefined
   },
   {
-    id: 'page-layout',
-    title: 'Page Layout',
-    description: 'Master the standard layout of Torah texts and commentaries',
-    level: '2',
-    order: 6,
-    status: 'locked',
-    prerequisites: ['section-breaks']
+      id: 'page-layout',
+      title: 'Page Layout',
+      description: 'Master the standard layout of Torah texts and commentaries',
+      level: '2',
+      order: 6,
+      status: 'locked',
+      prerequisites: ['section-breaks'],
+      skillId: undefined
   },
   {
-    id: 'reference-system',
-    title: 'Reference System',
-    description: 'Learn the traditional system for citing Torah passages',
-    level: '2',
-    order: 7,
-    status: 'locked',
-    prerequisites: ['page-layout']
+      id: 'reference-system',
+      title: 'Reference System',
+      description: 'Learn the traditional system for citing Torah passages',
+      level: '2',
+      order: 7,
+      status: 'locked',
+      prerequisites: ['page-layout'],
+      skillId: undefined
   },
 
   // Level 3: Basic Grammar
   {
-    id: 'root-words',
-    title: 'Root Words',
-    description: 'Identify and understand the three-letter root system',
-    level: '3',
-    order: 1,
-    status: 'locked',
-    prerequisites: ['parsha-overview']
+      id: 'root-words',
+      title: 'Root Words',
+      description: 'Identify and understand the three-letter root system',
+      level: '3',
+      order: 1,
+      status: 'locked',
+      prerequisites: ['parsha-overview'],
+      skillId: undefined
   },
   {
-    id: 'prefixes',
-    title: 'Prefixes',
-    description: 'Learn common Hebrew prefixes and their meanings',
-    level: '3',
-    order: 2,
-    status: 'locked',
-    prerequisites: ['root-words']
+      id: 'prefixes',
+      title: 'Prefixes',
+      description: 'Learn common Hebrew prefixes and their meanings',
+      level: '3',
+      order: 2,
+      status: 'locked',
+      prerequisites: ['root-words'],
+      skillId: undefined
   },
   {
-    id: 'suffixes',
-    title: 'Suffixes',
-    description: 'Master Hebrew suffixes and their grammatical functions',
-    level: '3',
-    order: 3,
-    status: 'locked',
-    prerequisites: ['prefixes']
+      id: 'suffixes',
+      title: 'Suffixes',
+      description: 'Master Hebrew suffixes and their grammatical functions',
+      level: '3',
+      order: 3,
+      status: 'locked',
+      prerequisites: ['prefixes'],
+      skillId: undefined
   }
 ]; 
 

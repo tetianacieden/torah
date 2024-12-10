@@ -102,11 +102,15 @@ export default function Home() {
                     </div>
                     <div className="text-left">
                       <h2 className="text-xl font-semibold">{level.title}</h2>
-                      <p className="text-sm text-gray-500">
-                        {level.status === 'completed' ? 'Completed' :
-                         level.status === 'in-progress' ? `${level.progress}/${level.totalSkills} skills completed` :
-                         'Complete previous level to unlock'}
-                      </p>
+                      {level.progress !== undefined ? (
+                        <p className="text-sm text-gray-500">
+                          {level.status === 'completed' ? 'Completed' :
+                           level.status === 'in-progress' ? `${level.progress}/${level.totalSkills} skills completed` :
+                           'Complete previous level to unlock'}
+                        </p>
+                      ) : (
+                        <p className="text-sm text-gray-500">Progress not available</p>
+                      )}
                     </div>
                   </div>
                 </button>
@@ -148,17 +152,16 @@ export default function Home() {
                       const wrapperProps = level.status === 'locked' 
                         ? {} 
                         : { href: `/skill/${skill.id}` };
-
                       return (
                         <SkillWrapper
                           key={skill.id}
                           {...wrapperProps}
                           className={`
-                            group relative flex-1 p-4 rounded-lg border h-24 
+                            group relative flex-1 p-4 rounded-lg border h-24
                             transition-all duration-300
                             ${level.status === 'locked' 
                               ? 'bg-gray-50 border-gray-200 opacity-75 cursor-not-allowed' 
-                              : index < level.progress 
+                              : index < (level.progress ?? 0)
                                 ? 'bg-white border-emerald-200 hover:border-emerald-300 cursor-pointer' 
                                 : level.status === 'in-progress' && index === level.progress
                                   ? 'bg-white border-blue-200 hover:border-blue-300 shadow-md cursor-pointer'
@@ -171,19 +174,19 @@ export default function Home() {
                               transition-colors
                               ${level.status === 'locked' 
                                 ? 'bg-gray-200 text-gray-600' 
-                                : index < level.progress 
+                                : index < (level.progress ?? 0)
                                   ? 'bg-emerald-600 text-white group-hover:bg-emerald-700' 
                                   : level.status === 'in-progress' && index === level.progress
                                     ? 'bg-blue-600 text-white group-hover:bg-blue-700'
                                     : 'bg-gray-200 text-gray-600'}
                             `}>
-                              {index < level.progress ? '✓' : (index + 1)}
+                              {index < (level.progress ?? 0) ? '✓' : (index + 1)}
                             </span>
                             <span className={`
                               font-medium transition-colors
-                              ${level.status === 'locked' 
+                              ${level.status === 'locked'
                                 ? 'text-gray-400' 
-                                : index < level.progress 
+                                : index < (level.progress ?? 0)
                                   ? 'text-emerald-700 group-hover:text-emerald-800' 
                                   : level.status === 'in-progress' && index === level.progress
                                     ? 'text-gray-900'
@@ -193,7 +196,7 @@ export default function Home() {
                             </span>
                           </div>
 
-                          {index < level.progress && (
+                          {index < (level.progress ?? 0) && (
                             <div className="absolute bottom-2 right-2">
                               <span className="text-xs font-medium text-emerald-800 bg-emerald-50 px-2 py-1 rounded">
                                 {skill.score}/100

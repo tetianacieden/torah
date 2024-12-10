@@ -1,7 +1,6 @@
 "use client";
-
 import { useState } from 'react';
-import { Exercise } from '@/app/types';
+import { Exercise } from '@/types/exercises';
 import { SingleSelect } from './exercises/SingleSelect';
 import { MultipleSelect } from './exercises/MultipleSelect';
 import { Construct } from './exercises/Construct';
@@ -173,7 +172,7 @@ export function TestSection({ exercises, onComplete, onRetry }: TestSectionProps
         return answer.length === exercise.correctSequence?.length &&
           answer.every((item: string, index: number) => item === exercise.correctSequence?.[index]);
       case 'match-pairs':
-        return exercise.pairs?.every(({ left, right }) =>
+        return exercise.pairs?.every(({ left, right }: { left: string, right: string }) =>
           answer.some(([l, r]: [string, string]) => l === left && r === right)
         );
       default:

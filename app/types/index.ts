@@ -82,3 +82,48 @@ export type Exercise =
   | SortBoxesExercise 
   | ConstructExercise
   | MatchPairsExercise;
+
+export interface StudentProgress {
+  id: string;
+  name: string;
+  progress: {
+    [skillId: string]: {
+      status: 'completed' | 'in-progress' | 'not-started';
+      score?: number;
+      lastActivity?: string;
+    }
+  }
+}
+
+export interface SkillProgress {
+  skillId: string;
+  skillName: string;
+  score: number;
+}
+
+export interface SkillIssue {
+  skillId: string;
+  skillName: string;
+  score: number;
+  specificIssues: string[];
+}
+
+export interface StudentInsight {
+  student: StudentProgress;
+  averageRecentScore: number;
+  strugglingSkills: SkillIssue[];
+}
+
+export interface TeacherStudent extends StudentProgress {
+  email: string;
+  class: string;
+  lastActive: string;
+}
+
+export interface TeacherClass {
+  id: string;
+  name: string;
+  students: TeacherStudent[];
+  averageProgress: number;
+  lastActivity: string;
+}
